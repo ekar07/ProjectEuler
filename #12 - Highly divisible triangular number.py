@@ -25,14 +25,5 @@ while count < 500:
                         count += 1
                         #print "count is ",count, ' x is ',x
         #print "tri number is ",tri," count is",count
-        if count > 400:
-                print "over 400! - x is ",x
-        elif count > 300:
-                print "over 300!- x is ",x
-        elif count > 200:
-                print "over 200!- x is ",x
-        elif count > 100:
-                print "over 100!- x is ",x
-                
 print "tri number is ",tri      
         

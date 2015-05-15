@@ -3,29 +3,23 @@
 #Find the sum of all the primes below two million.
 #Written by: Ed Karwacki
 import math
-primesum = 2
-n=2000000
-nums = []
-for x in range (0,n):
-        nums.append(x)
-square = int(math.sqrt(n))
-for x in range (2,square):
-        i = 2
-        isPrime = True
+
+def isPrime(x):
         for i in range (2,x):
                 if x%i == 0:
-                     isPrime = False
-                i += 1
-        if isPrime == True:
-                for num in range (x+1,n):
+                     return False
+        return True
+
+n=2000000
+square = int(math.sqrt(n))
+nums = []
+for x in range (0,n+1):
+        nums.append(x)
+nums[1] = 0
+for x in range (2,square):
+        if isPrime(x) == True:
+                for num in range (x+1,n+1):
                         if nums[num] % x == 0:
-                                #print nums[num]
-                                del nums[num]
-                                
-
-
-        x += 1
-
-print "done step 2"
+                                nums[num] = 0
 primesum = sum(nums)
 print "sum is ",primesum
