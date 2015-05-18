@@ -12,18 +12,21 @@
 # We can see that 28 is the first triangle number to have over five divisors.
 # What is the value of the first triangle number to have over five hundred divisors?
 # Written by: Ed Karwacki
+import math
 
 count = 0
 n = 0
 tri = 0
-while count < 500:
+num = 500
+while count < num:
         n += 1
         tri = tri + n
+        square = int(math.sqrt(tri))
         count = 0
-        for x in range (1,tri+1):
+        for x in range (1,square):
                 if tri % x == 0:
-                        count += 1
-                        #print "count is ",count, ' x is ',x
-        #print "tri number is ",tri," count is",count
+                        count += 2
+        if square * square == tri:
+        	count -= 1
 print "tri number is ",tri      
         
